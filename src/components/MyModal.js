@@ -17,7 +17,7 @@ class MyModal extends React.Component {
     return (
       <div>
         <Modal isOpen={modal} toggle={() => onDismiss()}>
-          <ModalHeader toggle={()=> onDismiss()}>Modal title</ModalHeader>
+          <ModalHeader toggle={()=> onDismiss()}>Please fill out this</ModalHeader>
           <ModalBody>
             <div className="form-group">
               <label className="form-group">First Name: </label>
@@ -49,7 +49,7 @@ class MyModal extends React.Component {
           </ModalBody>
           <ModalFooter>
             <button type="button" className="btn btn-primary" onClick={()=>addItem(person)}>Save</button>{' '}
-            <button type="button" className="btn btn-primary" onClick={this.toggle}>Cancel</button>
+            <button type="button" className="btn btn-primary" onClick={onDismiss}>Cancel</button>
           </ModalFooter>
         </Modal>
       </div>

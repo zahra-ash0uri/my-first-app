@@ -2,22 +2,13 @@ import React from 'react';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class EditModal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      modal: false
-    };
-
-  }
-
-
-
   render() {
+
     const { modal, person, onChange, addItem, onDismiss } = this.props;
     return (
       <div>
         <Modal isOpen={modal} toggle={() => onDismiss()}>
-          <ModalHeader toggle={()=> onDismiss()}>Modal title</ModalHeader>
+          <ModalHeader toggle={onDismiss}>Modal title</ModalHeader>
           <ModalBody>
             <div className="form-group">
               <label className="form-group">First Name: </label>
@@ -25,7 +16,7 @@ class EditModal extends React.Component {
                 type="text"
                 className="form-control"
                 value={person.firstName}
-                onChange={e => onChange('firstName', e.target.value)}
+                onChange={(e) => onChange('firstName', e.target.value)}
               />
             </div>
             <div className="form-group">
@@ -34,7 +25,7 @@ class EditModal extends React.Component {
                 type="text"
                 className="form-control"
                 value={person.lastName}
-                onChange={e => onChange('lastName', e.target.value)}
+                onChange={(e) => onChange('lastName', e.target.value)}
               />
             </div>
             <div className="form-group">
@@ -43,13 +34,13 @@ class EditModal extends React.Component {
                 type="text"
                 className="form-control"
                 value={person.Age}
-                onChange={e => onChange('Age', e.target.value)}
+                onChange={(e) => onChange('Age', e.target.value)}
               />
             </div>
           </ModalBody>
           <ModalFooter>
-            <button type="button" className="btn btn-primary" onClick={()=>addItem(person)}>Save</button>{' '}
-            <button type="button" className="btn btn-primary" onClick={this.onDismiss()}>Cancel</button>
+            <button type="button" className="btn btn-primary" onClick={() => addItem(person)}>Save</button>{' '}
+            <button type="button" className="btn btn-primary" onClick={() => onDismiss()}>Cancel</button>
           </ModalFooter>
         </Modal>
       </div>

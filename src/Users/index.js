@@ -1,14 +1,15 @@
 import React from 'react';
 import '../bootstrap.min.css';
-import NamePages from '../components/NamePages'
+import ApiCalls from '../components/ApiCalls';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>
-          <NamePages />  
-        </p>
+
+
+        <ApiCalls />
+
       </header>
     </div>
   );
